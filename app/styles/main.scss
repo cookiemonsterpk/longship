@@ -44,13 +44,14 @@ img {
 }
 
 // HelveticaNeue Thin
-.inner-section__title {
+.inner-section__title,
+.our-services__data-list__button {
     font-family: "HelveticaNeue Thin", arial, sans-serif;
     font-weight: 200;
 }
 
 // HelveticaNeue Roman
-.inner-section__main-text {
+.inner-section__main-text, {
     font-family: "HelveticaNeue Roman", arial, sans-serif;
     font-weight: 400;
 }
@@ -103,7 +104,8 @@ img {
 }
 
 // 36
-.header__content__callout-1 {
+.header__content__callout-1,
+.our-services__data-list__button {
     @include font-size(36);
 }
 
@@ -133,17 +135,21 @@ img {
 }
 
 // List normalization
-.header__main-nav__list {
+.header__main-nav__list,
+.our-services__data-title__list {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
 // Sprite
-.large-white-ship,
+.header__content:after,
 .our-approach__data-list__button:before,
 .our-approach__data-list__button:after,
-.quote__content__main-text:before {
+.quote__content__main-text:before,
+.our-services__data-list__button:before,
+.our-services__data-title__list__item:before,
+.our-services__data-list__data__close-button {
     background-image: url('/images/sprite.png');
     background-repeat: no-repeat;
     overflow: hidden;
@@ -187,20 +193,21 @@ img {
     }
 }
 
-.large-white-ship {
+.header__content {
+    padding-bottom: 7em;
+    position: relative;
+}
+
+.header__content:after {
     background-position: 100% 0;
     bottom: -.8em;
+    content: "";
     display: block;
     height: 117px;
     left: 50%;
     margin-left: -53px;
     position: absolute;
     width: 111px;
-}
-
-.header__content {
-    padding-bottom: 7em;
-    position: relative;
 }
 
 .inner-section__title {
@@ -395,6 +402,138 @@ img {
     .inner-section__title {
         color: $our-services-title--text;
     }
+}
+
+.our-services__content {
+    padding: 2em 2em 18em 2em;
+}
+
+.no-js .our-services__content {
+    padding: 2em;
+}
+
+.our-services__data-list {
+    position: relative;
+}
+
+.our-services__data-list__title {
+    float: left;    
+    padding: 0 1em;
+    width: 33%;
+}
+
+.no-js .our-services__data-list__title {
+    float: none;
+}
+
+.our-services__data-list__button {
+    background-color: $our-services-data-list-button--background;
+    border: none;
+    color: $our-services-data-list-button--text;
+    height: 3.056em;
+    position: relative;
+    width: 100%;
+}
+
+.our-services__data-list__button--before {
+    text-indent: 1.4em;
+}
+
+.our-services__data-list__button--during {
+    text-indent: 2.2em;
+}
+
+.our-services__data-list__button--after {
+    text-indent: 1.6em;
+}
+
+.our-services__data-list__button.active {
+    background-color: $our-services-data-list-button--background--active;
+}
+
+.our-services__data-list__button:active,
+.our-services__data-list__button:focus, 
+.our-services__data-list__button:hover {
+    background-color: $our-services-data-list-button--background--hover;
+}
+
+.our-services__data-list__button:before {
+    content: "";
+    position: absolute;
+}
+
+.our-services__data-list__button--before:before {
+    background-position: -2px -149px;
+    height: 69px;
+    left: 1em;        
+    top: 0.55em;
+    width: 48px;
+}
+
+.our-services__data-list__button--during:before {
+    background-position: -51px -149px;    
+    height: 68px;
+    left: 1em;        
+    top: 0.6em;
+    width: 68px;    
+}
+
+.our-services__data-list__button--after:before {
+    background-position: -121px -149px;    
+    height: 61px;
+    left: 1em;        
+    top: 0.7em;
+    width: 69px;
+}
+
+.our-services__data-list__data {    
+    background-color: $our-services-data-list-data--background;
+    display: none;
+    left: 0;
+    margin: 1em;
+    max-width: 53.45em;
+    padding: 1.5em 2em;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+}
+
+.no-js .our-services__data-list__data {
+    display: block;
+    margin: 0 1em 1em 1em;
+    position: static;
+}
+
+.our-services__data-list__data__close-button {
+    background-color: transparent;
+    background-position: -151px -118px;
+    border: none;
+    float: right;
+    height: 25px;
+    margin: 0 -.5em 0 0;
+    width: 25px;
+}
+
+.our-services__data-title {
+    font-weight: bold;
+}
+
+.our-services__data-title__list__item {
+    float: left;    
+    height: 3.5em;
+    padding: 0 .5em 0 1.5em;
+    position: relative;
+    width: 50%;
+}
+
+.our-services__data-title__list__item:before {
+    background-position: -35px -102px;
+    content: "";
+    height: 11px;
+    left: 0;
+    position: absolute;
+    top: .3em;
+    width: 12px;
 }
 
 .our-process {
