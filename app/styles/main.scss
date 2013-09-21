@@ -8,11 +8,23 @@
     box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
 // position:fixed header fix for Chrome
 html, body {
     color: $body--text;
     height: 100%;
     overflow: auto
+}
+
+.lt-ie10, 
+.lt-ie10 body {
+    height: auto;    
 }
 
 // img fix
@@ -72,7 +84,8 @@ img {
 }
 
 // 14
-.our-clients__content-list__item {
+.our-clients__content-list__item,
+.our-process__data-list__deliverables {
     @include font-size(14);
 }
 
@@ -99,7 +112,8 @@ img {
 }
 
 // 30
-.our-approach__data-list__button {
+.our-approach__data-list__button,
+.our-process__data-list__button {
     @include font-size(30);
 }
 
@@ -163,14 +177,26 @@ img {
     text-align: center;
 }
 
-.inner-section {
-    margin: 0 auto;
-    max-width: 60em;
-    padding: 2em;
-}
+
+
+
+
+/*
+        __  __               __         
+       / / / /__  ____ _____/ /__  _____
+      / /_/ / _ \/ __ `/ __  / _ \/ ___/
+     / __  /  __/ /_/ / /_/ /  __/ /    
+    /_/ /_/\___/\__,_/\__,_/\___/_/     
+
+*/
 
 .header {
     background-color: $header--background;
+}
+
+.header__nav-bar {
+    padding: 1em 0;
+    position: relative;
 }
 
 .header__nav-bar-section {
@@ -179,6 +205,37 @@ img {
     position: fixed;
     width: 100%;
     z-index: 3;
+}
+
+.lt-ie10 .header__nav-bar-section {
+    position: static;
+}
+
+.header__logo-link {
+    left: 0;
+    position: absolute;
+    top: .65em;
+}
+
+.header__main-nav {
+    float: right;
+}
+
+.header__main-nav__list__item {
+    float: left;
+    margin: 0 0 0 2em;
+}
+
+.header__main-nav__list__item__link {
+    color: $header-main-nav-list-item-link--text;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.header__main-nav__list__item__link:active,
+.header__main-nav__list__item__link:focus,
+.header__main-nav__list__item__link:hover {
+    text-decoration: underline;
 }
 
 .header__content-section {
@@ -210,6 +267,29 @@ img {
     width: 111px;
 }
 
+.header__content__callout-1 {
+    font-weight: bold;
+}
+
+
+
+
+
+/*
+        ____                         _____           __  _           
+       /  _/___  ____  ___  _____   / ___/___  _____/ /_(_)___  ____ 
+       / // __ \/ __ \/ _ \/ ___/   \__ \/ _ \/ ___/ __/ / __ \/ __ \
+     _/ // / / / / / /  __/ /      ___/ /  __/ /__/ /_/ / /_/ / / / /
+    /___/_/ /_/_/ /_/\___/_/      /____/\___/\___/\__/_/\____/_/ /_/ 
+                                                                     
+*/
+
+.inner-section {
+    margin: 0 auto;
+    max-width: 60em;
+    padding: 2em;
+}
+
 .inner-section__title {
     text-transform: uppercase;
 }
@@ -217,6 +297,19 @@ img {
 .inner-section__main-text {
     margin-top: -1em;
 }
+
+
+
+
+
+/*
+       ____                ___                                      __  
+      / __ \__  _______   /   |  ____  ____  _________  ____ ______/ /_ 
+     / / / / / / / ___/  / /| | / __ \/ __ \/ ___/ __ \/ __ `/ ___/ __ \
+    / /_/ / /_/ / /     / ___ |/ /_/ / /_/ / /  / /_/ / /_/ / /__/ / / /
+    \____/\__,_/_/     /_/  |_/ .___/ .___/_/   \____/\__,_/\___/_/ /_/ 
+                             /_/   /_/                                  
+*/
 
 .our-approach {
     background-color: $our-approach--background;
@@ -230,6 +323,7 @@ img {
     padding: 2em 2em 0 2em;
 }
 
+// Data List
 .our-approach__data-list {
     border-top: solid $our-approach-data-list--border 1px;
     border-right: solid $our-approach-data-list--border 1px;
@@ -282,6 +376,7 @@ img {
     border-top: dashed $our-approach-data-list-button--border 1px;
 }
 
+// Button
 .our-approach__data-list__button {
     color: $our-approach-data-list-button--text;
     background: transparent;
@@ -335,16 +430,30 @@ img {
     background-position: -2px -102px;
 }
 
+// Data
 .our-approach__data-list__data {
     display: none;
     padding: 0 3em 1.875em 3em;
 }
 
-.no-js .our-approach__data-list__data {
+.no-js .our-approach__data-list__data,
+.lt-ie8 .our-approach__data-list__data {
     display: block;
 }
 
-// Quote
+
+
+
+
+/*
+       ____              __     
+      / __ \__  ______  / /____ 
+     / / / / / / / __ \/ __/ _ \
+    / /_/ / /_/ / /_/ / /_/  __/
+    \___\_\__,_/\____/\__/\___/ 
+                                
+*/
+
 .quote {
     background: $quote--background;
     @media screen and (min-width: 35em) {
@@ -389,6 +498,19 @@ img {
     }
 }
 
+
+
+
+
+/*
+       ____                _____                 _               
+      / __ \__  _______   / ___/___  ______   __(_)_______  _____
+     / / / / / / / ___/   \__ \/ _ \/ ___/ | / / / ___/ _ \/ ___/
+    / /_/ / /_/ / /      ___/ /  __/ /   | |/ / / /__/  __(__  ) 
+    \____/\__,_/_/      /____/\___/_/    |___/_/\___/\___/____/  
+                                                                 
+*/
+
 .our-services {
     background: $our-services--background;
     @media screen and (min-width: 35em) {
@@ -408,10 +530,12 @@ img {
     padding: 2em 2em 18em 2em;
 }
 
-.no-js .our-services__content {
+.no-js .our-services__content,
+.lt-ie9 .our-services__content {
     padding: 2em;
 }
 
+// Data List
 .our-services__data-list {
     position: relative;
 }
@@ -422,10 +546,12 @@ img {
     width: 33%;
 }
 
-.no-js .our-services__data-list__title {
+.no-js .our-services__data-list__title,
+.lt-ie9 .our-services__data-list__title {
     float: none;
 }
 
+// Button
 .our-services__data-list__button {
     background-color: $our-services-data-list-button--background;
     border: none;
@@ -486,6 +612,7 @@ img {
     width: 69px;
 }
 
+// Data
 .our-services__data-list__data {    
     background-color: $our-services-data-list-data--background;
     display: none;
@@ -498,7 +625,8 @@ img {
     width: 100%;
 }
 
-.no-js .our-services__data-list__data {
+.no-js .our-services__data-list__data,
+.lt-ie9 .our-services__data-list__data {
     display: block;
     margin: 0 1em 1em 1em;
     position: static;
@@ -512,6 +640,11 @@ img {
     height: 25px;
     margin: 0 -.5em 0 0;
     width: 25px;
+}
+
+.no-js .our-services__data-list__data__close-button,
+.lt-ie9 .our-services__data-list__data__close-button {
+    display: none;
 }
 
 .our-services__data-title {
@@ -536,6 +669,19 @@ img {
     width: 12px;
 }
 
+
+
+
+
+/*
+       ____                ____                                
+      / __ \__  _______   / __ \_________  ________  __________
+     / / / / / / / ___/  / /_/ / ___/ __ \/ ___/ _ \/ ___/ ___/
+    / /_/ / /_/ / /     / ____/ /  / /_/ / /__/  __(__  |__  ) 
+    \____/\__,_/_/     /_/   /_/   \____/\___/\___/____/____/  
+                                                               
+*/
+
 .our-process {
     background-color: $our-process--background;
 
@@ -543,6 +689,68 @@ img {
         color: $our-process-title--text;
     }
 }
+
+// Buttons 
+.our-process__data-list__button {
+    background-color: $our-process-data-list-button--background;
+    border: solid $our-process-data-list-button--border 1px;
+    border-radius: .167em;
+    color: $our-process-data-list-button--text;
+    margin: 0 0 .5em 0;
+    padding: 1em;
+    text-align: left;
+    width: 100%;
+}
+
+.no-js .our-process__data-list__button,
+.our-process__data-list__button.active {
+    border-top: solid $our-process-data-list-button--border 1px;
+    border-right: solid $our-process-data-list-button--border 1px;
+    border-bottom: none;
+    border-left: solid $our-process-data-list-button--border 1px;
+    border-radius: .167em .167em 0 0;
+    margin: 0;
+    padding: 1em;
+}
+
+// Data
+.our-process__data-list__data {
+    background-color: $our-process-data-list-button--background;
+    border-top: none;
+    border-right: solid $our-process-data-list-button--border 1px;
+    border-bottom: solid $our-process-data-list-button--border 1px;
+    border-left: solid $our-process-data-list-button--border 1px;
+    border-radius: 0 0 .313em .313em;
+    display: none;
+    margin: -1em 0 1em 0;
+    padding: .1em 1.875em;
+    width: 100%;
+}
+
+.no-js .our-process__data-list__data,
+.lt-ie8 .our-process__data-list__data {
+    display: block;
+}
+
+.our-process__data-list__deliverables {
+    border-top: solid $our-process-data-list-deliverables--border 1px;
+    color: $our-process-data-list-deliverables--text;
+    margin: 2em 0 0 0;
+    padding: .5em 0 1em 0;
+}
+
+
+
+
+
+/*
+       ____                _________            __      
+      / __ \__  _______   / ____/ (_)__  ____  / /______
+     / / / / / / / ___/  / /   / / / _ \/ __ \/ __/ ___/
+    / /_/ / /_/ / /     / /___/ / /  __/ / / / /_(__  ) 
+    \____/\__,_/_/      \____/_/_/\___/_/ /_/\__/____/  
+
+*/
 
 .our-clients {
     background-color: $our-clients--background;
@@ -552,6 +760,19 @@ img {
     }
 }
 
+
+
+
+
+/*
+       ____                ______                   
+      / __ \__  _______   /_  __/__  ____ _____ ___ 
+     / / / / / / / ___/    / / / _ \/ __ `/ __ `__ \
+    / /_/ / /_/ / /       / / /  __/ /_/ / / / / / /
+    \____/\__,_/_/       /_/  \___/\__,_/_/ /_/ /_/ 
+                                                    
+*/
+
 .our-team {
     background-color: $our-team--backgroud;
 
@@ -559,6 +780,19 @@ img {
         color: $our-team-title--text;
     }
 }
+
+
+
+
+
+/*
+        ______            __           
+       / ____/___  ____  / /____  _____
+      / /_  / __ \/ __ \/ __/ _ \/ ___/
+     / __/ / /_/ / /_/ / /_/  __/ /    
+    /_/    \____/\____/\__/\___/_/     
+                                       
+*/
 
 .footer {
     background-color: $footer--background;
@@ -568,45 +802,4 @@ img {
     }
 }
 
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
 
-.header__nav-bar {
-    padding: 1em 0;
-    position: relative;
-}
-
-.header__logo-link {
-    left: 0;
-    position: absolute;
-    top: .65em;
-}
-
-.header__main-nav {
-    float: right;
-}
-
-.header__main-nav__list__item {
-    float: left;
-    margin: 0 0 0 2em;
-}
-
-.header__main-nav__list__item__link {
-    color: $header-main-nav-list-item-link--text;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.header__main-nav__list__item__link:active,
-.header__main-nav__list__item__link:focus,
-.header__main-nav__list__item__link:hover {
-    text-decoration: underline;
-}
-
-.header__content__callout-1 {
-    font-weight: bold;
-}

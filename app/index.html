@@ -1,8 +1,9 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,6 +28,7 @@
         <header id="top" class="header" role="banner">
 
             <a href="#main" class="visuallyhidden focusable">Skip to main content</a>
+            <a href="#contact-us" class="visuallyhidden focusable">Skip to footer</a>            
 
             <section class="header__nav-bar-section">
 
@@ -188,8 +190,8 @@
 
                     <dl class="our-process__data-list">
 
-                        <dt class="our-process__data-list__title"><button class="our-process__data-list__button">Discover</button></dt>
-                        <dd class="our-process__data-list__data">
+                        <dt class="our-process__data-list__title"><button class="our-process__data-list__button js-data-list-button">Discover</button></dt>
+                        <dd class="our-process__data-list__data js-data-list-content">
                             <p>As part of the discovery process we undertake four core functions:</p>
                             <ol>
                                 <li>Investigate your business requirements</li>
@@ -198,18 +200,20 @@
                                 <li>Establish strategies that work for you.</li>
                             </ol>
 
-                            <p>Deliverables and services in this process may include:</p>
-                            <ul>
-                                <li>SWOT and competitive analysis</li>
-                                <li>Current state evaluation</li>
-                                <li>Audience evaluation</li>
-                                <li>Business requirements </li>
-                                <li>Strategy development</li>
-                            </ul>
+                            <div class="our-process__data-list__deliverables">
+                                <p>Deliverables and services in this process may include:</p>
+                                <ul>
+                                    <li>SWOT and competitive analysis</li>
+                                    <li>Current state evaluation</li>
+                                    <li>Audience evaluation</li>
+                                    <li>Business requirements </li>
+                                    <li>Strategy development</li>
+                                </ul>
+                            </div>
                         </dd>
 
-                        <dt class="our-process__data-list__title"><button class="our-process__data-list__button">Define</button></dt>
-                        <dd class="our-process__data-list__data">
+                        <dt class="our-process__data-list__title"><button class="our-process__data-list__button js-data-list-button">Define</button></dt>
+                        <dd class="our-process__data-list__data js-data-list-content">
                             <p>This is where we help you align the needs of your business with those of your audiences. This is done by focussing on:</p>
                             <ol>
                                 <li>Determining what you need to say.</li>
@@ -218,18 +222,20 @@
                                 <li>Documenting what your users will need to do.</li>
                             </ol>
 
-                            <p>Deliverables and services in this process may include:</p>
-                            <ul>
-                                <li>Content audit and strategy</li>
-                                <li>Information architecture</li>
-                                <li>Logic flow and process definition</li>
-                                <li>KPIs and conversion goals</li>
-                                <li>Functional requirements</li>
-                            </ul>
+                            <div class="our-process__data-list__deliverables">
+                                <p>Deliverables and services in this process may include:</p>
+                                <ul>
+                                    <li>Content audit and strategy</li>
+                                    <li>Information architecture</li>
+                                    <li>Logic flow and process definition</li>
+                                    <li>KPIs and conversion goals</li>
+                                    <li>Functional requirements</li>
+                                </ul>
+                            </div>
                         </dd>
 
-                        <dt class="our-process__data-list__title"><button class="our-process__data-list__button">Design</button></dt>
-                        <dd class="our-process__data-list__data">
+                        <dt class="our-process__data-list__title"><button class="our-process__data-list__button js-data-list-button">Design</button></dt>
+                        <dd class="our-process__data-list__data js-data-list-content">
                             <p>An effective user experience and more effective web presence is always the result of carefully combining:</p>
                             <ol>
                                 <li>structure,</li>
@@ -240,38 +246,41 @@
 
                             <p>We ensure that all four of these key areas are addressed effectively in order to create a positive user experience and drive better results. </p>
 
-                            <p>Deliverables and services in this process may include:</p>
-                            <ul>
-                                <li>Content Style Guide</li>
-                                <li>Interaction Design</li>
-                                <li>Visual Design</li>
-                                <li>Technical Architecture</li>
-                            </ul>
+                            <div class="our-process__data-list__deliverables">
+                                <p>Deliverables and services in this process may include:</p>
+                                <ul>
+                                    <li>Content Style Guide</li>
+                                    <li>Interaction Design</li>
+                                    <li>Visual Design</li>
+                                    <li>Technical Architecture</li>
+                                </ul>
+                            </div>
                         </dd>
 
-                        <dt class="our-process__data-list__title"><button class="our-process__data-list__button">Develop</button></dt>
-                        <dd class="our-process__data-list__data">
+                        <dt class="our-process__data-list__title"><button class="our-process__data-list__button js-data-list-button">Develop</button></dt>
+                        <dd class="our-process__data-list__data js-data-list-content">
                             <p>In our opinion, development is the easiest of all the stages. Some people may not agree. It’s where we take what we have planned for you and implement it.</p>
 
                             <p>Quite honestly in our experience, the biggest challenge for development is when the previous stages have been poorly addressed and have resulted in incomplete planning, content or design.</p>
 
                             <p>Our experience and our associates provide us with the ability to develop for almost any CMS and technology. You’ll always get the best solution based on your needs.</p>
 
-                            <p>Deliverables and services in this process may include:</p>
-
-                            <ul>
-                                <li>Front End web development (HTML5/CSS3)</li>
-                                <li>Integration of Content Management Solutions (WordPress, Drupal, Joomla, MS Sharepoint, Sitecore, Opentext WCMS and more)</li>
-                                <li>Search integration and refinement</li>
-                                <li>Database architecture and integration</li>
-                                <li>eCommerce, CRM and shopping carts</li>
-                                <li>Custom web and mobile applications</li>
-                                <li>Every project we undertake is built to be Accessibility (WCAG 2.0) and Responsive for mobile devices</li>
-                            </ul>
+                            <div class="our-process__data-list__deliverables">
+                                <p>Deliverables and services in this process may include:</p>
+                                <ul>
+                                    <li>Front End web development (HTML5/CSS3)</li>
+                                    <li>Integration of Content Management Solutions (WordPress, Drupal, Joomla, MS Sharepoint, Sitecore, Opentext WCMS and more)</li>
+                                    <li>Search integration and refinement</li>
+                                    <li>Database architecture and integration</li>
+                                    <li>eCommerce, CRM and shopping carts</li>
+                                    <li>Custom web and mobile applications</li>
+                                    <li>Every project we undertake is built to be Accessibility (WCAG 2.0) and Responsive for mobile devices</li>
+                                </ul>
+                            </div>
                         </dd>
 
-                        <dt class="our-process__data-list__title"><button class="our-process__data-list__button">Deploy</button></dt>
-                        <dd class="our-process__data-list__data">
+                        <dt class="our-process__data-list__title"><button class="our-process__data-list__button js-data-list-button">Deploy</button></dt>
+                        <dd class="our-process__data-list__data js-data-list-content">
                             <p>Deploying your website or application is a major undertaking in and of itself.  It involves:</p>
                             <ul>
                                 <li>Optimizing your content for the new site,</li>
@@ -280,30 +289,33 @@
                                 <li>Testing to ensure the site loads and works quickly.</li>
                             </ul>
 
-                            <p>Deliverables and services in this process may include:</p>
-
-                            <ul>
-                                <li>Content Migration</li>
-                                <li>Search Engine Optimization</li>
-                                <li>CRM integration and analytics integration</li>
-                                <li>User Acceptance Testing</li>
-                                <li>1 year guarantees for software upgrades</li>
-                                <li>301 redirects and other SEO mitigation measures</li>
-                            </ul>
+                            <div class="our-process__data-list__deliverables">
+                                <p>Deliverables and services in this process may include:</p>
+                                <ul>
+                                    <li>Content Migration</li>
+                                    <li>Search Engine Optimization</li>
+                                    <li>CRM integration and analytics integration</li>
+                                    <li>User Acceptance Testing</li>
+                                    <li>1 year guarantees for software upgrades</li>
+                                    <li>301 redirects and other SEO mitigation measures</li>
+                                </ul>
+                            </div>
                         </dd>
 
-                        <dt class="our-process__data-list__title"><button class="our-process__data-list__button">Improve</button></dt>
-                        <dd class="our-process__data-list__data">
+                        <dt class="our-process__data-list__title"><button class="our-process__data-list__button js-data-list-button">Improve</button></dt>
+                        <dd class="our-process__data-list__data js-data-list-content">
                             <p>The job isn’t done once your project goes live. An effective web site or application needs to be constantly monitored and improved.  By setting up effective analytics and conversion goals we can measure performance, test different options and then recommend and implement improvements.</p>
 
                             <p>Our suite of maintenance and management services is guaranteed to improve any website.</p>
 
-                            <p>Deliverables and services in this process may include:</p>
-                            <ul>
-                                <li>Monthly analytics reports including audience segmentation and keyword reports</li>
-                                <li>A/B testing</li>
-                                <li>Evaluation and recommendations</li>
-                            </ul>
+                            <div class="our-process__data-list__deliverables">
+                                <p>Deliverables and services in this process may include:</p>
+                                <ul>
+                                    <li>Monthly analytics reports including audience segmentation and keyword reports</li>
+                                    <li>A/B testing</li>
+                                    <li>Evaluation and recommendations</li>
+                                </ul>
+                            </div>
 
                         </dd>
 
