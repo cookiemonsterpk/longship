@@ -1,9 +1,11 @@
+document.addEventListener("touchstart", function(){}, true);
+
 $('body').on('click', '.js-data-list-button', function () {
 	$(this).toggleClass('active');
 	$(this).parent('dt').next('.js-data-list-content').toggleClass('active');
 });
 
-$('body').on('click', '.js-data-list-button--our-services', function () {	
+$('body').on('click', '.js-data-list-button--our-services', function () {
 	$('.js-data-list-button--our-services, .js-data-list-content--our-services').removeClass('active');
 	$(this).toggleClass('active');
 	$(this).parent('dt').next('.js-data-list-content--our-services').addClass('active');
@@ -24,6 +26,21 @@ $('body').on('click', '.js-our-clients-full-list-button', function () {
 	}
 });
 
+$('body').on('click', '.js-header-main-nav-button', function () {
+	$(this).toggleClass('active-button');
+	$('.js-header-main-nav-list').toggleClass('active');
+
+	if ($(this).hasClass('active-button')) {
+		$(this).html($(this).data('button-text-active'));
+	} else {
+		$(this).html($(this).data('button-text'));
+	}
+});
+
+$('body').on('click', '.js-header-main-nav-list-item-link', function () {
+	$('.js-header-main-nav-list').removeClass('active');
+});
+
 /*
 var Module = (function () {
 
@@ -32,25 +49,25 @@ var Module = (function () {
     };
 
     var displayDataList = function (attr) {
-        var elem = datajs(attr);        
-        
+        var elem = datajs(attr);
+
         for (var i = 0; i < elem.length; i++) {
-            
+
             var self = elem[i];
-            
+
             self.onclick = function () {
 
             	switch (attr) {
             		case 'data-list-button':
             			this.classList.toggle('active');
-						this.parentNode.nextElementSibling.classList.toggle('active');				
+						this.parentNode.nextElementSibling.classList.toggle('active');
 						break;
 					case 'data-list-button--our-services':
 						$('.js-data-list-button--our-services, .js-data-list-content--our-services').removeClass('active');
 						this.classList.toggle('active');
 						this.parentNode.nextElementSibling.classList.add('active');
 						break;
-            	}           	
+            	}
 
             };
         }

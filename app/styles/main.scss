@@ -1,10 +1,10 @@
 /*
-        ____                           __ 
+        ____                           __
        /  _/___ ___  ____  ____  _____/ /_
        / // __ `__ \/ __ \/ __ \/ ___/ __/
-     _/ // / / / / / /_/ / /_/ / /  / /_  
-    /___/_/ /_/ /_/ .___/\____/_/   \__/  
-                 /_/                      
+     _/ // / / / / / /_/ / /_/ / /  / /_
+    /___/_/ /_/ /_/ .___/\____/_/   \__/
+                 /_/
 */
 
 @import "compass";
@@ -18,16 +18,20 @@
 /*
        ________      __          __
       / ____/ /___  / /_  ____ _/ /
-     / / __/ / __ \/ __ \/ __ `/ / 
-    / /_/ / / /_/ / /_/ / /_/ / /  
-    \____/_/\____/_.___/\__,_/_/   
-                                   
+     / / __/ / __ \/ __ \/ __ `/ /
+    / /_/ / / /_/ / /_/ / /_/ / /
+    \____/_/\____/_.___/\__,_/_/
+
 */
 
 * {
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
+}
+
+button {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .browsehappy {
@@ -44,9 +48,9 @@ html, body {
     overflow: auto
 }
 
-.lt-ie10, 
+.lt-ie10,
 .lt-ie10 body {
-    height: auto;    
+    height: auto;
 }
 
 // <img> fix
@@ -73,12 +77,12 @@ img {
 
 
 /*
-        ______            __        ______                _ __     
+        ______            __        ______                _ __
        / ____/___  ____  / /_      / ____/___ _____ ___  (_) /_  __
       / /_  / __ \/ __ \/ __/_____/ /_  / __ `/ __ `__ \/ / / / / /
-     / __/ / /_/ / / / / /_/_____/ __/ / /_/ / / / / / / / / /_/ / 
-    /_/    \____/_/ /_/\__/     /_/    \__,_/_/ /_/ /_/_/_/\__, /  
-                                                          /____/   
+     / __/ / /_/ / / / / /_/_____/ __/ / /_/ / / / / / / / / /_/ /
+    /_/    \____/_/ /_/\__/     /_/    \__,_/_/ /_/ /_/_/_/\__, /
+                                                          /____/
 */
 
 // HelveticaNeue Medium
@@ -133,15 +137,16 @@ img {
 
 
 /*
-        ______            __       _____ _          
-       / ____/___  ____  / /_     / ___/(_)___  ___ 
+        ______            __       _____ _
+       / ____/___  ____  / /_     / ___/(_)___  ___
       / /_  / __ \/ __ \/ __/_____\__ \/ /_  / / _ \
      / __/ / /_/ / / / / /_/_____/__/ / / / /_/  __/
-    /_/    \____/_/ /_/\__/     /____/_/ /___/\___/ 
-                                                    
+    /_/    \____/_/ /_/\__/     /____/_/ /___/\___/
+
 */
 
 // 14
+.quote__content__cite-text,
 .our-clients__content-list__item,
 .our-process__data-list__deliverables,
 .our-team__position,
@@ -150,23 +155,19 @@ img {
 }
 
 // 18
-.quote__content__cite-text span {
+.inner-section__main-text,
+.quote__content__main-text, {
     @include font-size(18);
 }
 
-// 22
-.inner-section__main-text {
-    @include font-size(22);
-}
-
 // 26
-.header__content__callout-2,
-.quote__content__main-text {
+.header__content__callout-1,
+.our-services__data-list__button,
+.our-approach__data-list__button {
     @include font-size(26);
 }
 
 // 30
-.our-approach__data-list__button,
 .our-process__data-list__button,
 .inner-section__heading--h3,
 .contact-us-form__legend {
@@ -174,15 +175,49 @@ img {
 }
 
 // 36
-.header__content__callout-1,
-.our-services__data-list__button,
+.inner-section__heading--h2,
 .footer__content__call-us {
     @include font-size(36);
 }
 
-// 48
-.inner-section__heading--h2 {
-    @include font-size(48);
+@media screen and (min-width: 35em) {
+    // 18
+    .quote__content__cite-text span {
+        @include font-size(18);
+    }
+
+    // 22
+    .inner-section__main-text {
+        @include font-size(22);
+    }
+
+    // 26
+    .header__content__callout-2,
+    .quote__content__main-text {
+        @include font-size(26);
+    }
+
+    // 30
+    .our-approach__data-list__button {
+        @include font-size(30);
+    }
+
+    // 36
+    .header__content__callout-1 {
+        @include font-size(36);
+    }
+
+    // 48
+    .inner-section__heading--h2 {
+        @include font-size(48);
+    }
+}
+
+@media screen and (min-width: 48.125em) {
+    // 36
+    .our-services__data-list__button {
+        @include font-size(36);
+    }
 }
 
 
@@ -190,12 +225,12 @@ img {
 
 
 /*
-        __    _      __     _   __                           ___             __  _           
-       / /   (_)____/ /_   / | / /___  _________ ___  ____ _/ (_)___  ____ _/ /_(_)___  ____ 
+        __    _      __     _   __                           ___             __  _
+       / /   (_)____/ /_   / | / /___  _________ ___  ____ _/ (_)___  ____ _/ /_(_)___  ____
       / /   / / ___/ __/  /  |/ / __ \/ ___/ __ `__ \/ __ `/ / /_  / / __ `/ __/ / __ \/ __ \
      / /___/ (__  ) /_   / /|  / /_/ / /  / / / / / / /_/ / / / / /_/ /_/ / /_/ / /_/ / / / /
-    /_____/_/____/\__/  /_/ |_/\____/_/  /_/ /_/ /_/\__,_/_/_/ /___/\__,_/\__/_/\____/_/ /_/ 
-                                                                                             
+    /_____/_/____/\__/  /_/ |_/\____/_/  /_/ /_/ /_/\__,_/_/_/ /___/\__,_/\__/_/\____/_/ /_/
+
 */
 
 .header__main-nav__list,
@@ -216,14 +251,15 @@ img {
 
 
 /*
-       _____            _ __     
-      / ___/____  _____(_) /____ 
+       _____            _ __
+      / ___/____  _____(_) /____
       \__ \/ __ \/ ___/ / __/ _ \
      ___/ / /_/ / /  / / /_/  __/
-    /____/ .___/_/  /_/\__/\___/ 
-        /_/                      
+    /____/ .___/_/  /_/\__/\___/
+        /_/
 */
 
+.header__main-nav__menu-button,
 .header__content:after,
 .our-approach__data-list__button:before,
 .our-approach__data-list__button:after,
@@ -232,6 +268,7 @@ img {
 .our-services__data-title__list__item:before,
 .our-services__data-list__data__close-button,
 .our-process__data-list__button:after,
+.our-team__content:after,
 .footer__content__follow-icon  {
     background-image: url('/images/sprite.png');
     background-repeat: no-repeat;
@@ -244,22 +281,33 @@ img {
 
 
 /*
-        ____                         _____           __  _           
-       /  _/___  ____  ___  _____   / ___/___  _____/ /_(_)___  ____ 
+        ____                         _____           __  _
+       /  _/___  ____  ___  _____   / ___/___  _____/ /_(_)___  ____
        / // __ \/ __ \/ _ \/ ___/   \__ \/ _ \/ ___/ __/ / __ \/ __ \
      _/ // / / / / / /  __/ /      ___/ /  __/ /__/ /_/ / /_/ / / / /
-    /___/_/ /_/_/ /_/\___/_/      /____/\___/\___/\__/_/\____/_/ /_/ 
-                                                                     
+    /___/_/ /_/_/ /_/\___/_/      /____/\___/\___/\__/_/\____/_/ /_/
+
 */
 
 .inner-section {
     margin: 0 auto;
-    max-width: 60em;
-    padding: 2em;
+    padding: 1em 1em 3em 1em;
+    @media screen and (min-width: 35em) {
+        max-width: 60em;
+        padding: 2em 2em 5em 2em;
+    }
 }
 
 .inner-section__heading--h2 {
     text-transform: uppercase;
+}
+
+.inner-section__heading--h3 {
+    color: $inner-section-heading-h3--text;
+    text-align: center;
+    @media screen and (min-width: 27.375em) {
+        text-align: left;
+    }
 }
 
 .inner-section__main-text {
@@ -271,11 +319,11 @@ img {
 
 
 /*
-        __  __               __         
+        __  __               __
        / / / /__  ____ _____/ /__  _____
       / /_/ / _ \/ __ `/ __  / _ \/ ___/
-     / __  /  __/ /_/ / /_/ /  __/ /    
-    /_/ /_/\___/\__,_/\__,_/\___/_/     
+     / __  /  __/ /_/ / /_/ /  __/ /
+    /_/ /_/\___/\__,_/\__,_/\___/_/
 
 */
 
@@ -284,7 +332,7 @@ img {
 }
 
 .header__nav-bar {
-    padding: 1em 0;
+    padding: 0;
     position: relative;
 }
 
@@ -301,24 +349,94 @@ img {
 }
 
 .header__logo-link {
-    left: 0;
+    display: block;
+    left: 1.3em;
+    padding: .58em .7em;
     position: absolute;
-    top: .65em;
+    top: 0;
+    z-index: 999;
+    @media screen and (min-width: 43.75em) {
+        left: .3em;
+    }
+}
+
+.header__logo-link:active,
+.header__logo-link:focus {
+    background-color: $header-logo-link--background;
 }
 
 .header__main-nav {
     float: right;
+    position: relative;
+    width: 100%;
+    @media screen and (min-width: 43.75em) {
+        width: auto;
+    }
+}
+
+.header__main-nav__menu-button {
+    background-color: transparent;
+    background-position: -130px -211px;
+    border: none;
+    display: block;
+    height: 16px;
+    float: right;
+    margin: 0 1em 0 0;
+    padding: 1.7em;
+    width: 19px;
+    @media screen and (min-width: 43.75em) {
+        display: none;
+    }
+}
+
+.header__main-nav__menu-button:active,
+.header__main-nav__menu-button:focus {
+    background-color: $header-main-nav-menu-button--background;
+}
+
+.header__main-nav__list {
+    background-color: $header-main-nav-list--background;
+    border-top: solid $header-nav-bar-section--border 1px;
+    border-bottom: solid $header-nav-bar-section--border 1px;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 100%;
+    z-index: 999;
+
+    @media screen and (min-width: 43.75em) {
+        border-top: none;
+        border-bottom: none;
+        display: block;
+        position: static;
+    }
 }
 
 .header__main-nav__list__item {
-    float: left;
-    margin: 0 0 0 2em;
+    border-bottom: solid $header-main-nav-list-item--border 1px;
+    @media screen and (min-width: 43.75em) {
+        border-bottom: none;
+        float: left;
+    }
+}
+
+.header__main-nav__list__item:last-child {
+    border: none;
 }
 
 .header__main-nav__list__item__link {
     color: $header-main-nav-list-item-link--text;
+    display: block;
     font-weight: bold;
+    padding: 1em;
     text-decoration: none;
+    @media screen and (min-width: 43.75em) {
+        padding: 1em .5em;
+    }
+    @media screen and (min-width: 49.063em) {
+        padding: 1em;
+    }
 }
 
 .header__main-nav__list__item__link:active,
@@ -373,12 +491,12 @@ img {
 
 
 /*
-       ____                ___                                      __  
-      / __ \__  _______   /   |  ____  ____  _________  ____ ______/ /_ 
+       ____                ___                                      __
+      / __ \__  _______   /   |  ____  ____  _________  ____ ______/ /_
      / / / / / / / ___/  / /| | / __ \/ __ \/ ___/ __ \/ __ `/ ___/ __ \
     / /_/ / /_/ / /     / ___ |/ /_/ / /_/ / /  / /_/ / /_/ / /__/ / / /
-    \____/\__,_/_/     /_/  |_/ .___/ .___/_/   \____/\__,_/\___/_/ /_/ 
-                             /_/   /_/                                  
+    \____/\__,_/_/     /_/  |_/ .___/ .___/_/   \____/\__,_/\___/_/ /_/
+                             /_/   /_/
 */
 
 .our-approach {
@@ -390,7 +508,10 @@ img {
 }
 
 .our-approach__content {
-    padding: 2em 2em 0 2em;
+    padding: 1em 1em 0 1em;
+    @media screen and (min-width: 35em) {
+        padding: 2em 2em 0 2em;
+    }
 }
 
 // Data List
@@ -399,9 +520,12 @@ img {
     border-right: solid $our-approach-data-list--border 1px;
     border-left: solid $our-approach-data-list--border 1px;
     margin: 0 auto;
-    max-width: 48.75em;
-    padding: 0 2em 2em 2em;
+    padding: 0 1em 1em 1em;
     position: relative;
+    @media screen and (min-width: 35em) {
+        max-width: 48.75em;
+        padding: 0 2em 2em 2em;
+    }
 }
 
 /*
@@ -451,20 +575,27 @@ img {
     color: $our-approach-data-list-button--text;
     background: transparent;
     border: none;
-    padding: 1em 3em;
+    padding: 1em 2em 1em 0;
     position: relative;
     text-align: left;
     width: 100%;
+    @media screen and (min-width: 35em) {
+        padding: 1em 3em;
+    }
 }
 
 .our-approach__data-list__button:before {
-    background-position: 0px -118px;
-    content: "";
-    height: 30px;
-    left: 1em;
-    position: absolute;
-    top: 1.1em;
-    width: 30px;
+    display: none;
+    @media screen and (min-width: 35em) {
+        background-position: 0px -118px;
+        content: "";
+        display: block;
+        height: 30px;
+        left: 1em;
+        position: absolute;
+        top: 1.1em;
+        width: 30px;
+    }
 }
 
 .our-approach__data-list__button.active:before {
@@ -478,13 +609,16 @@ img {
 }
 
 .our-approach__data-list__button:after {
-    background-position: 14px 14px;
+    background-position: -2px -102px;
     content: "";
     height: 14px;
     position: absolute;
     right: 1em;
     top: 1.3em;
     width: 14px;
+    @media screen and (min-width: 35em) {
+        background-position: 14px 14px;
+    }
 }
 
 .our-approach__data-list__button.active:after,
@@ -497,13 +631,20 @@ img {
 .our-approach__data-list__button:active:after,
 .our-approach__data-list__button:focus:after,
 .our-approach__data-list__button:hover:after {
-    background-position: -2px -102px;
+    @media screen and (min-width: 35em) {
+        background-position: -2px -102px;
+    }
 }
 
 // Data
 .our-approach__data-list__data {
     display: none;
-    padding: 0 3em 1.875em 3em;
+    margin: 0;
+    padding: 0 1em 1em 1em;
+    @media screen and (min-width: 35em) {
+        margin: 0 0 0 3em;
+        padding: 0 3em 1.875em 3em;
+    }
 }
 
 .no-js .our-approach__data-list__data,
@@ -516,12 +657,12 @@ img {
 
 
 /*
-       ____              __     
-      / __ \__  ______  / /____ 
+       ____              __
+      / __ \__  ______  / /____
      / / / / / / / __ \/ __/ _ \
     / /_/ / /_/ / /_/ / /_/  __/
-    \___\_\__,_/\____/\__/\___/ 
-                                
+    \___\_\__,_/\____/\__/\___/
+
 */
 
 .quote {
@@ -536,36 +677,50 @@ img {
 }
 
 .quote__content {
+    padding: 3em 2em 2em 2em;
     position: relative;
+    @media screen and (min-width: 35em) {
+        padding: 4em 2em;
+    }
 }
 
 .quote__content__main-text {
-    margin: 0 7.692em 0 0;
-    overflow: hidden;
-    padding: 0 0 0 1.731em;
+    margin: 0;
     position: relative;
     width: auto;
+    @media screen and (min-width: 35em) {
+        margin: 0 7.692em 0 0;
+        overflow: hidden;
+        padding: 0 0 0 1.731em;
+    }
 }
 
 .quote__content__main-text:before {
     background-position: -121px -118px;
     content: "";
     height: 21px;
-    left: 0;
+    left: -1em;
     position: absolute;
-    top: .3em;
+    top: -1.4em;
     width: 28px;
+    @media screen and (min-width: 35em) {
+        left: 0;
+        top: .3em;
+    }
 }
 
 .quote__content__cite-text {
     color: $quote-content-cite-text--text;
-    padding: 0 0 0 1.875em;
-    position: absolute;
-    right: 0;
-    top: 2em;
-    width: 12.5em;
+    padding: 1em 0 0 0;
     span {
         display: block;
+    }
+    @media screen and (min-width: 35em) {
+        padding: 0 0 0 1.875em;
+        position: absolute;
+        right: 0;
+        top: 4em;
+        width: 12.5em;
     }
 }
 
@@ -574,12 +729,12 @@ img {
 
 
 /*
-       ____                _____                 _               
+       ____                _____                 _
       / __ \__  _______   / ___/___  ______   __(_)_______  _____
      / / / / / / / ___/   \__ \/ _ \/ ___/ | / / / ___/ _ \/ ___/
-    / /_/ / /_/ / /      ___/ /  __/ /   | |/ / / /__/  __(__  ) 
-    \____/\__,_/_/      /____/\___/_/    |___/_/\___/\___/____/  
-                                                                 
+    / /_/ / /_/ / /      ___/ /  __/ /   | |/ / / /__/  __(__  )
+    \____/\__,_/_/      /____/\___/_/    |___/_/\___/\___/____/
+
 */
 
 .our-services {
@@ -598,7 +753,9 @@ img {
 }
 
 .our-services__content {
-    padding: 2em 2em 18em 2em;
+    @media screen and (min-width: 43.125em) {
+        padding: 2em 2em 18em 2em;
+    }
 }
 
 .no-js .our-services__content,
@@ -612,9 +769,18 @@ img {
 }
 
 .our-services__data-list__title {
-    float: left;    
-    padding: 0 1em;
-    width: 33%;
+    margin: 0 0 1em 0;
+    @media screen and (min-width: 43.125em) {
+        float: left;
+        margin: 0;
+        width: 32%;
+    }
+}
+
+.our-services__data-list__title:nth-child(3) {
+    @media screen and (min-width: 43.125em) {
+        margin: 0 2%;
+    }
 }
 
 .no-js .our-services__data-list__title,
@@ -630,18 +796,27 @@ img {
     height: 3.056em;
     position: relative;
     width: 100%;
+    @media screen and (min-width: 48.125em) {
+        height: 3.056em;
+    }
 }
 
 .our-services__data-list__button--before {
-    text-indent: 1.4em;
+    @media screen and (min-width: 43.125em) {
+        text-indent: 1.4em;
+    }
 }
 
 .our-services__data-list__button--during {
-    text-indent: 2.2em;
+    @media screen and (min-width: 43.125em) {
+        text-indent: 2.2em;
+    }
 }
 
 .our-services__data-list__button--after {
-    text-indent: 1.6em;
+    @media screen and (min-width: 43.125em) {
+        text-indent: 1.6em;
+    }
 }
 
 .our-services__data-list__button.active {
@@ -649,51 +824,86 @@ img {
 }
 
 .our-services__data-list__button:active,
-.our-services__data-list__button:focus, 
+.our-services__data-list__button:focus,
 .our-services__data-list__button:hover {
     background-color: $our-services-data-list-button--background--hover;
 }
 
 .our-services__data-list__button:before {
-    content: "";
-    position: absolute;
+    display: none;
+    @media screen and (min-width: 20em) {
+        content: "";
+        display: block;
+        position: absolute;
+    }
 }
 
 .our-services__data-list__button--before:before {
     background-position: -2px -149px;
     height: 69px;
-    left: 1em;        
-    top: 0.55em;
+    left: .5em;
+    top: .2em;
     width: 48px;
+    @media screen and (min-width: 43.125em) {
+        left: .2em;
+    }
+    @media screen and (min-width: 48.125em) {
+        left: .5em;
+        top: .55em;
+    }
+    @media screen and (min-width: 53.125em) {
+        left: 1em;
+    }
 }
 
 .our-services__data-list__button--during:before {
-    background-position: -51px -149px;    
+    background-position: -51px -149px;
     height: 68px;
-    left: 1em;        
-    top: 0.6em;
-    width: 68px;    
+    left: .5em;
+    top: .2em;
+    width: 68px;
+    @media screen and (min-width: 43.125em) {
+        left: .2em;
+    }
+    @media screen and (min-width: 48.125em) {
+        left: .5em;
+        top: .6em;
+    }
+    @media screen and (min-width: 53.125em) {
+        left: 1em;
+    }
 }
 
 .our-services__data-list__button--after:before {
-    background-position: -121px -149px;    
+    background-position: -121px -149px;
     height: 61px;
-    left: 1em;        
-    top: 0.7em;
+    left: .5em;
+    top: .4em;
     width: 69px;
+    @media screen and (min-width: 43.125em) {
+        left: .2em;
+    }
+    @media screen and (min-width: 48.125em) {
+        left: .5em;
+        top: .7em;
+    }
+    @media screen and (min-width: 53.125em) {
+        left: 1em;
+    }
 }
 
 // Data
-.our-services__data-list__data {    
+.our-services__data-list__data {
     background-color: $our-services-data-list-data--background;
     display: none;
-    left: 0;
-    margin: 1em;
-    max-width: 53.45em;
+    margin: 1em 0;
     padding: 1.5em 2em;
-    position: absolute;
-    top: 100%;
     width: 100%;
+    @media screen and (min-width: 43.125em) {
+        left: 0;
+        position: absolute;
+        top: 100%;
+    }
 }
 
 .no-js .our-services__data-list__data,
@@ -723,11 +933,17 @@ img {
 }
 
 .our-services__data-title__list__item {
-    float: left;    
-    height: 3.5em;
+    float: left;
+    margin: 0 0 .5em 0;
     padding: 0 .5em 0 1.5em;
     position: relative;
-    width: 50%;
+    @media screen and (min-width: 35em) {
+        height: 3.5em;
+        width: 50%;
+    }
+    @media screen and (min-width: 43.125em) {
+        margin: 0;
+    }
 }
 
 .our-services__data-title__list__item:before {
@@ -745,12 +961,12 @@ img {
 
 
 /*
-       ____                ____                                
+       ____                ____
       / __ \__  _______   / __ \_________  ________  __________
      / / / / / / / ___/  / /_/ / ___/ __ \/ ___/ _ \/ ___/ ___/
-    / /_/ / /_/ / /     / ____/ /  / /_/ / /__/  __(__  |__  ) 
-    \____/\__,_/_/     /_/   /_/   \____/\___/\___/____/____/  
-                                                               
+    / /_/ / /_/ / /     / ____/ /  / /_/ / /__/  __(__  |__  )
+    \____/\__,_/_/     /_/   /_/   \____/\___/\___/____/____/
+
 */
 
 .our-process {
@@ -761,7 +977,7 @@ img {
     }
 }
 
-// Buttons 
+// Buttons
 .our-process__data-list__button {
     background-color: $our-process-data-list-button--background;
     border: solid $our-process-data-list-button--border 1px;
@@ -839,11 +1055,11 @@ img {
 
 
 /*
-       ____                _________            __      
+       ____                _________            __
       / __ \__  _______   / ____/ (_)__  ____  / /______
      / / / / / / / ___/  / /   / / / _ \/ __ \/ __/ ___/
-    / /_/ / /_/ / /     / /___/ / /  __/ / / / /_(__  ) 
-    \____/\__,_/_/      \____/_/_/\___/_/ /_/\__/____/  
+    / /_/ / /_/ / /     / /___/ / /  __/ / / / /_(__  )
+    \____/\__,_/_/      \____/_/_/\___/_/ /_/\__/____/
 
 */
 
@@ -855,14 +1071,23 @@ img {
     }
 }
 
-.our-clients__logo-list__item {            
-    float: left;    
+.our-clients__logo-list__item {
+    float: left;
     padding: 1px;
-    width: 25%;
+    width: 100%;
+    @media screen and (min-width: 21.25em) {
+        width: 50%;
+    }
+    @media screen and (min-width: 33em) {
+        width: 33.3%;
+    }
+    @media screen and (min-width: 50.313em) {
+        width: 25%;
+    }
 }
 
 .our-clients__logo-list__item__link {
-    display: block;    
+    display: block;
     text-align: center;
     vertical-align: middle;
     position: relative;
@@ -875,11 +1100,11 @@ img {
     background-color: $our-clients-logo-list-item-link--after--background;
     bottom: 0;
     color: $our-clients-logo-list-item-link--after--text;
-    content: attr(data-text)"\2192";    
+    content: attr(data-text)"\2192";
     height: 100%;
     font-weight: bold;
     left: 0;
-    opacity: .8;    
+    opacity: .8;
     position: absolute;
     right: 0;
     text-align: left;
@@ -913,9 +1138,16 @@ img {
 }
 
 .our-clients__content-list__item {
-    float: left;    
+    float: left;
     padding: 0 1.5em 0 0;
-    width: 33%;
+    width: 100%;
+    @media screen and (min-width: 35em) {
+        width: 50%;
+    }
+    @media screen and (min-width: 46.875em) {
+        width: 33%;
+    }
+
 }
 
 
@@ -923,12 +1155,12 @@ img {
 
 
 /*
-       ____                ______                   
-      / __ \__  _______   /_  __/__  ____ _____ ___ 
+       ____                ______
+      / __ \__  _______   /_  __/__  ____ _____ ___
      / / / / / / / ___/    / / / _ \/ __ `/ __ `__ \
     / /_/ / /_/ / /       / / /  __/ /_/ / / / / / /
-    \____/\__,_/_/       /_/  \___/\__,_/_/ /_/ /_/ 
-                                                    
+    \____/\__,_/_/       /_/  \___/\__,_/_/ /_/ /_/
+
 */
 
 .our-team {
@@ -939,39 +1171,82 @@ img {
     }
 }
 
+.our-team__content {
+    padding: 2em 2em 7em 2em;
+    position: relative;
+}
+
+.our-team__content:after {
+    background-position: -36px 0;
+    bottom: -.5em;
+    content: "";
+    display: block;
+    height: 86px;
+    left: 80%;
+    margin-left: -53px;
+    position: absolute;
+    width: 80px;
+}
+
 .our-team__content__left {
-    float: left;
-    padding: 0 1em 0 0;
-    width: percentage(550px / 960px);
+    @media screen and (min-width: 46.875em) {
+        float: left;
+        padding: 0 1em 0 0;
+        width: percentage(550px / 960px);
+    }
 }
 
 .our-team__content__right {
-    float: left;    
-    width: percentage(410px / 960px);
+    @media screen and (min-width: 46.875em) {
+        float: left;
+        width: percentage(410px / 960px);
+    }
 }
 
 .our-team__list-1__item {
-    margin: 1em 0;
+    text-align: center;
+    margin: 0 0 1em 0;
+    @media screen and (min-width: 27.375em) and (max-width: 46.875em), (min-width: 57.5em) {
+        margin: 1em 0;
+    }
 }
 
 .our-team__list-2__item {
     float: left;
-    padding: 0 1em 1em 0;    
-    width: 33%;
+    padding: 0 1em 1em 0;
+    text-align: center;
+    width: 100%;
+    @media screen and (min-width: 38.375em) and (max-width: 46.875em) {
+        text-align: left;
+        width: 50%;
+    }
+    @media screen and (min-width: 46.875em) {
+        width: 33%;
+    }
+    @media screen and (min-width: 46.813em) and (max-width: 57.5em) {
+        text-align: center;
+    }
 }
 
 .our-team__list-1__name-position-list {
-    float: left;
-    margin: 2.5em 0 0 1em;
+    @media screen and (min-width: 27.375em) and (max-width: 46.875em), (min-width: 57.5em) {
+        float: left;
+        margin: 2.5em 0 0 1em;
+    }
 }
 
 .our-team__list-2__name-position-list {
-    float: left;
-    margin: 1.4em 0 0 1em;
+    @media screen and (min-width: 27.375em) and (max-width: 46.875em), (min-width: 57.5em) {
+        float: left;
+        margin: 1.4em 0 0 1em;
+    }
 }
 
 .our-team__image {
-    float: left;    
+    border-radius: 50%;
+    @media screen and (min-width: 27.375em) and (max-width: 46.875em), (min-width: 57.5em) {
+        float: left;
+    }
 }
 
 .our-team__name {
@@ -982,12 +1257,12 @@ img {
 
 
 /*
-        ______            __           
+        ______            __
        / ____/___  ____  / /____  _____
       / /_  / __ \/ __ \/ __/ _ \/ ___/
-     / __/ / /_/ / /_/ / /_/  __/ /    
-    /_/    \____/\____/\__/\___/_/     
-                                       
+     / __/ / /_/ / /_/ / /_/  __/ /
+    /_/    \____/\____/\__/\___/_/
+
 */
 
 .footer {
@@ -1000,14 +1275,18 @@ img {
 
 // Text
 .footer__content__left {
-    float: left;
-    padding: 0 3em 0 0;
-    width: percentage(540px / 960px);
+    @media screen and (min-width: 53.5em) {
+        float: left;
+        padding: 0 3em 0 0;
+        width: percentage(540px / 960px);
+    }
 }
 
 .footer__content__right {
-    float: left;    
-    width: percentage(420px / 960px);
+    @media screen and (min-width: 53.5em) {
+        float: left;
+        width: percentage(420px / 960px);
+    }
 }
 
 .footer__content__call-us {
@@ -1019,15 +1298,19 @@ img {
 }
 
 .footer__content__address {
-    float: left;
-    padding: 0 2em 0 0;
-    width: percentage(320px / 500px);
+    @media screen and (min-width: 27.25em) {
+        float: left;
+        padding: 0 2em 0 0;
+        width: percentage(320px / 500px);
+    }
 }
 
 .footer__content__follow {
-    float: left;    
-    margin: 1em 0 0 0;
-    width: percentage(180px / 500px);
+    @media screen and (min-width: 27.25em) {
+        float: left;
+        margin: 1em 0 0 0;
+        width: percentage(180px / 500px);
+    }
 }
 
 .footer__content__follow-list__item {
@@ -1050,6 +1333,13 @@ img {
 }
 
 // Form
+.contact-us-form {
+    margin: 2em 0 0 0;
+    @media screen and (min-width: 27.25em) {
+        margin: 0;
+    }
+}
+
 .contact-us-form__legend {
     color: $contact-us-form-legend--text;
     margin: 0 0 .5em 0;
@@ -1065,7 +1355,7 @@ img {
     border-radius: .313em;
     display: block;
     margin: .1em 0 .7em 0;
-    padding: .5em;
+    padding: .8em;
     width: 100%;
 }
 
@@ -1074,7 +1364,7 @@ img {
 }
 
 .contact-us-form__textarea {
-    min-height: 6em;
+    min-height: 8em;
 }
 
 .contact-us-form__submit-button {
@@ -1083,5 +1373,5 @@ img {
     border-radius: .313em;
     color: $contact-us-form-submit-button--text;
     display: block;
-    padding: .5em .8em;
+    padding: .8em 1.5em;
 }
