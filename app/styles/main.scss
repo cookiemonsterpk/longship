@@ -30,7 +30,7 @@
             box-sizing: border-box;
 }
 
-button {
+a, button {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
@@ -41,11 +41,10 @@ button {
     padding: 0.2em 0;
 }
 
-// "position:fixed" Header fix for Chrome
 html, body {
     color: $body--text;
     height: 100%;
-    overflow: auto
+    width: 100%;
 }
 
 .lt-ie10,
@@ -339,8 +338,10 @@ img {
 .header__nav-bar-section {
     background-color: $header-nav-bar-section--background;
     border-bottom: solid $header-nav-bar-section--border 1px;
+    left: 0;
     position: fixed;
     width: 100%;
+    top: 0;
     z-index: 3;
 }
 
@@ -641,6 +642,7 @@ img {
     display: none;
     margin: 0;
     padding: 0 1em 1em 1em;
+    transition: all 0.5s ease;
     @media screen and (min-width: 35em) {
         margin: 0 0 0 3em;
         padding: 0 3em 1.875em 3em;
