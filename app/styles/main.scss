@@ -301,7 +301,7 @@ img {
 .our-process__data-list__button:after,
 .our-team__content:after,
 .footer__content__follow-icon  {
-    background-image: url('/images/sprite.png');
+    background-image: url('../images/sprite.png');
     background-repeat: no-repeat;
     overflow: hidden;
     text-indent: -9999px;
@@ -486,7 +486,7 @@ img {
     background: $header__content-section--background;
     padding: 5em 0 0 0;
     @media screen and (min-width: 35em) {
-        background: $header__content-section--background url('/images/header-bg.png') no-repeat center center;
+        background: $header__content-section--background url('../images/header-bg.png') no-repeat center center;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -706,7 +706,7 @@ img {
 .quote {
     background: $quote--background;
     @media screen and (min-width: 35em) {
-        background: $quote--background url('/images/quote-bg.png') no-repeat center center;
+        background: $quote--background url('../images/quote-bg.png') no-repeat center center;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -778,7 +778,7 @@ img {
 .our-services {
     background: $our-services--background;
     @media screen and (min-width: 35em) {
-        background: $our-services--background url('/images/our-services-bg.png') no-repeat center center;
+        background: $our-services--background url('../images/our-services-bg.png') no-repeat center center;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -1130,25 +1130,37 @@ img {
     vertical-align: middle;
     position: relative;
     width: 100%;
+    z-index: 1;
+}
+
+.our-clients__logo-list__item__link:active:before,
+.our-clients__logo-list__item__link:focus:before,
+.our-clients__logo-list__item__link:hover:before {
+    background-color: $our-clients-logo-list-item-link--after--background;
+    bottom: 0;
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: .8;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
 }
 
 .our-clients__logo-list__item__link:active:after,
 .our-clients__logo-list__item__link:focus:after,
 .our-clients__logo-list__item__link:hover:after {
-    background-color: $our-clients-logo-list-item-link--after--background;
-    bottom: 0;
+    bottom: .5em;
     color: $our-clients-logo-list-item-link--after--text;
     content: attr(data-text)"\2192";
-    height: 100%;
     font-weight: bold;
-    left: 0;
-    opacity: .8;
+    left: .5em;
     position: absolute;
-    right: 0;
     text-align: left;
     text-decoration: none;
-    top: 0;
-    width: 100%;
+    z-index: 3;
 }
 
 .our-clients__full-list-button {
