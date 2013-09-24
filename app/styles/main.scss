@@ -58,6 +58,23 @@ img {
     max-width: 100%;
 }
 
+.heading--h2 {
+    color: $heading-h2--text;
+    text-transform: uppercase;
+    margin: 1em 0 .2em 0;
+}
+
+.heading--h3 {
+    color: $heading-h3--text;
+    margin: 0 0 1em 0;
+    text-transform: uppercase;
+}
+
+.heading--h4 {
+    color: $heading-h4--text;
+    margin: 1em 0 .3em 0;
+}
+
 // Active state
 .active {
     display: block !important;
@@ -105,7 +122,10 @@ img {
 // HelveticaNeue Thin
 .inner-section__heading--h2,
 .our-services__data-list__button,
-.inner-section__heading--h3 {
+.inner-section__heading--h3,
+.heading--h2,
+.heading--h3,
+.heading--h4 {
     font-family: "HelveticaNeue Thin", arial, sans-serif;
     font-weight: 200;
 }
@@ -149,17 +169,19 @@ img {
 .our-clients__content-list__item,
 .our-process__data-list__deliverables,
 .our-team__position,
-.footer__copy {
+.footer__copy,
+.case-study__aside__list__item {
     @include font-size(14);
 }
 
 // 18
-.inner-section__main-text,
-.quote__content__main-text, {
+.heading--h4,
+.inner-section__main-text {
     @include font-size(18);
 }
 
 // 26
+.heading--h2,
 .header__content__callout-1,
 .our-services__data-list__button,
 .our-approach__data-list__button {
@@ -174,6 +196,7 @@ img {
 }
 
 // 36
+.heading--h3,
 .inner-section__heading--h2,
 .footer__content__call-us {
     @include font-size(36);
@@ -186,6 +209,7 @@ img {
     }
 
     // 22
+    .heading--h4,
     .inner-section__main-text {
         @include font-size(22);
     }
@@ -202,13 +226,20 @@ img {
     }
 
     // 36
+    .heading--h2,
     .header__content__callout-1 {
         @include font-size(36);
     }
 
     // 48
+    .heading--h3,
     .inner-section__heading--h2 {
         @include font-size(48);
+    }
+
+    // Override
+    .quote__content__main-text--case-study {
+        @include font-size(18);
     }
 }
 
@@ -239,7 +270,8 @@ img {
 .our-team__list-2,
 .our-team__list-1__name-position-list,
 .our-team__list-2__name-position-list,
-.footer__content__follow-list {
+.footer__content__follow-list,
+.case-study__aside__list {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -443,7 +475,11 @@ img {
 .header__main-nav__list__item__link:active,
 .header__main-nav__list__item__link:focus,
 .header__main-nav__list__item__link:hover {
-    text-decoration: underline;
+    background-color: $header-main-nav-list-item-link--background;
+    @media screen and (min-width: 43.75em) {
+        background-color: transparent;
+        text-decoration: underline;
+    }
 }
 
 .header__content-section {
@@ -1258,6 +1294,80 @@ img {
 
 
 
+
+
+/*
+       ______                   _____ __            __
+      / ____/___ _________     / ___// /___  ______/ /_  __
+     / /   / __ `/ ___/ _ \    \__ \/ __/ / / / __  / / / /
+    / /___/ /_/ (__  )  __/   ___/ / /_/ /_/ / /_/ / /_/ /
+    \____/\__,_/____/\___/   /____/\__/\__,_/\__,_/\__, /
+                                                  /____/
+*/
+
+.case-study {
+    background-color: $case-study--background;
+}
+
+.case-study__content {
+    overflow: hidden;
+    position: relative;
+}
+
+.case-study__article {
+    @media screen and (min-width: 43.75em) {
+        float: left;
+        padding: 0 2em 0 0;
+        width: 73%;
+    }
+}
+
+.case-study__aside {
+    @media screen and (min-width: 43.75em) {
+        float: left;
+        width: 27%;
+    }
+}
+
+.case-study__aside__list__item {
+    margin: 0 0 .5em 0;
+}
+
+// Header
+.header__content--case-study {
+    padding: 2em 2em 3em 2em;
+}
+
+.header__content--case-study:after {
+    display: none;
+}
+
+// Quote
+.quote__content--case-study {
+    padding: 2em 0;
+}
+
+.quote__content__main-text--case-study {
+    float: none;
+    margin: 0;
+    padding: 0 0 0 2em;
+}
+
+.quote__content__cite-text--case-study {
+    margin: 1em 0 0 0;
+    padding: 0 0 0 2em;
+    position: static;
+    width: 100%;
+}
+
+// Logo
+.our-clients__logo-list__item__logo--case-study {
+    @media screen and (min-width: 35em) {
+        margin: 5em 0;
+    }
+}
+
+
 /*
         ______            __
        / ____/___  ____  / /____  _____
@@ -1273,6 +1383,11 @@ img {
     .inner-section__heading--h2 {
         color: $contact-us-title--text;
     }
+}
+
+.footer--case-study {
+    background-color: $our-clients--background;
+    padding: 0 2em;
 }
 
 // Text
