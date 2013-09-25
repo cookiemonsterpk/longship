@@ -34,7 +34,8 @@ module.exports = function (grunt) {
                     livereload: LIVERELOAD_PORT
                 },
                 files: [
-                    '<%= yeoman.app %>/{,*/}*.html',
+                    '<%= yeoman.app %>/{,*/}/*.html',
+                    '<%= yeoman.app %>/case-study/{,*/}*.html',
                     '.tmp/styles/{,*/}*.css',
                     '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
                     '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
@@ -173,7 +174,7 @@ module.exports = function (grunt) {
             options: {
                 dirs: ['<%= yeoman.dist %>']
             },
-            html: ['<%= yeoman.dist %>/{,*/}*.html'],
+            html: ['<%= yeoman.dist %>/{,*/}*.html', '<%= yeoman.dist %>/case-study/{,*/}*.html'],
             css: ['<%= yeoman.dist %>/styles/{,*/}*.css']
         },
         imagemin: {
@@ -205,7 +206,7 @@ module.exports = function (grunt) {
         htmlmin: {
             dist: {
                 options: {
-                    /*removeCommentsFromCDATA: true,
+                    removeCommentsFromCDATA: true,
                     // https://github.com/yeoman/grunt-usemin/issues/44
                     //collapseWhitespace: true,
                     collapseBooleanAttributes: true,
@@ -213,12 +214,12 @@ module.exports = function (grunt) {
                     removeRedundantAttributes: true,
                     useShortDoctype: true,
                     removeEmptyAttributes: true,
-                    removeOptionalTags: true*/
+                    removeOptionalTags: true
                 },
                 files: [{
                     expand: true,
                     cwd: '<%= yeoman.app %>',
-                    src: '{,*/}*.html',
+                    src: ['{,*/}*.html', 'case-study/{,*/}*.html'],
                     dest: '<%= yeoman.dist %>'
                 }]
             }
@@ -235,7 +236,8 @@ module.exports = function (grunt) {
                         '*.{ico,png,txt}',
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}',
-                        'styles/fonts/{,*/}*.*'
+                        'styles/fonts/{,*/}*.*',
+                        '{,*/}*.php'
                     ]
                 }]
             },
@@ -247,16 +249,16 @@ module.exports = function (grunt) {
                 src: '{,*/}*.css'
             }
         },
-        modernizr: {
-            devFile: '<%= yeoman.app %>/bower_components/modernizr/modernizr.js',
-            outputFile: '<%= yeoman.dist %>/bower_components/modernizr/modernizr.js',
-            files: [
-                '<%= yeoman.dist %>/scripts/{,*/}*.js',
-                '<%= yeoman.dist %>/styles/{,*/}*.css',
-                '!<%= yeoman.dist %>/scripts/vendor/*'
-            ],
-            uglify: true
-        },
+        //modernizr: {
+        //    devFile: '<%= yeoman.app %>/bower_components/modernizr/modernizr.js',
+        //    outputFile: '<%= yeoman.dist %>/bower_components/modernizr/modernizr.js',
+        //    files: [
+        //        '<%= yeoman.dist %>/scripts/{,*/}*.js',
+        //        '<%= yeoman.dist %>/styles/{,*/}*.css',
+        //        '!<%= yeoman.dist %>/scripts/vendor/*'
+        //    ],
+        //    uglify: true
+        //},
         concurrent: {
             server: [
                 'compass',
@@ -294,7 +296,7 @@ module.exports = function (grunt) {
         'concat',
         'cssmin',
         'uglify',
-        'modernizr',
+        //'modernizr',
         'copy:dist',
         'rev',
         'usemin'
