@@ -23,10 +23,14 @@
 		// Cache selectors
 		App.dom = {};
 
+		App.dom.htmlBody = $('html, body');
+
+		App.dom.homePage = $('.js-home-page');
 		App.dom.year = $('.js-year');
 		App.dom.dataListButton = $('.js-data-list-button');
 		App.dom.dataListButtonOurServices = $('.js-data-list-button--our-services');
 		App.dom.dataListButtonDataListContentOurServices = $('.js-data-list-button--our-services, .js-data-list-content--our-services');
+
 		App.dom.dataListContentOurServices = $('.js-data-list-content--our-services');
 		App.dom.dataListContentOurServicesClose = $('.js-data-list-content--our-services-close');
 		App.dom.ourClientsFullListButton = $('.js-our-clients-full-list-button');
@@ -35,6 +39,14 @@
 		App.dom.headerMainNavList = $('.js-header-main-nav-list');
 		App.dom.headerMainNavListItemLink = $('.js-header-main-nav-list-item-link');
 		App.dom.textRotate = $('.js-text-rotate');
+
+		// Main Nav Links
+		App.dom.ourApproachLink = $('.js-our-approach-link');
+		App.dom.ourServicesLink = $('.js-our-services-link');
+		App.dom.ourProcessLink = $('.js-our-process-link');
+		App.dom.ourClientsLink = $('.js-our-clients-link');
+		App.dom.ourTeamLink = $('.js-our-team-link');
+		App.dom.contactUsLink = $('.js-contact-us-link');
 
 		// Form
 		App.dom.contactForm = $('#contactForm');
@@ -84,6 +96,7 @@
 			$this.toggleClass('active');
 
 			if (window.matchMedia('(min-width: 35em)').matches) {
+				App.dom.dataListContentOurServices.fadeOut();
 				$this.parent('dt').next('.js-data-list-content--our-services').fadeIn();
 			} else {
 				$this.parent('dt').next('.js-data-list-content--our-services').addClass('active');
@@ -137,9 +150,18 @@
 
 		});
 
-		App.dom.headerMainNavListItemLink.on('click', function () {
+		App.dom.headerMainNavListItemLink.on('click', function (e) {
 
-			App.dom.headerMainNavList.removeClass('active');
+			if (App.dom.homePage.length) {
+
+				// Hide main nav
+				App.dom.headerMainNavList.removeClass('active');
+
+				// Scroll to position
+				App.dom.htmlBody.animate({ scrollTop: Math.round($($(this).attr('href')).offset().top) }, 600);
+
+				return false;
+			}
 
 		});
 

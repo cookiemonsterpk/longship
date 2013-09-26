@@ -840,6 +840,7 @@ img {
 .no-js .our-services__data-list__title,
 .lt-ie9 .our-services__data-list__title {
     float: none;
+    margin: 0;
 }
 
 // Button
@@ -963,7 +964,7 @@ img {
 .no-js .our-services__data-list__data,
 .lt-ie9 .our-services__data-list__data {
     display: block;
-    margin: 0 1em 1em 1em;
+    margin: 0 0 1em 0;
     position: static;
 }
 
