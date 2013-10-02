@@ -11,10 +11,7 @@
 		App.BindListeners();
 		App.Util();
 		App.Methods();
-
-		// Year
-		var myDate = new Date();
-		App.dom.year.html( myDate.getFullYear() );
+		App.Onload();
 
 	};
 
@@ -27,10 +24,11 @@
 
 		App.dom.homePage = $('.js-home-page');
 		App.dom.year = $('.js-year');
-		App.dom.dataListButton = $('.js-data-list-button');
-		App.dom.dataListButtonOurServices = $('.js-data-list-button--our-services');
-		App.dom.dataListButtonDataListContentOurServices = $('.js-data-list-button--our-services, .js-data-list-content--our-services');
 
+		App.dom.dataList = $('.js-data-list');
+		App.dom.dataListLink = $('.js-data-list-link');
+		App.dom.dataListLinkOurServices = $('.js-data-list-link--our-services');
+		App.dom.dataListLinkDataListContentOurServices = $('.js-data-list-link--our-services, .js-data-list-content--our-services');
 		App.dom.dataListContentOurServices = $('.js-data-list-content--our-services');
 		App.dom.dataListContentOurServicesClose = $('.js-data-list-content--our-services-close');
 		App.dom.ourClientsFullListButton = $('.js-our-clients-full-list-button');
@@ -76,42 +74,51 @@
 			});
 		}
 
-		App.dom.dataListButton.on('click', function () {
+		App.dom.dataListLink.on('mouseup', function (e) {
 
 			var $this = $(this);
 			$this.toggleClass('active');
+			$this.parent().toggleClass('active');
 
 			if (window.matchMedia('(min-width: 35em)').matches) {
-				$this.parent('dt').next('.js-data-list-content').slideToggle();
+				$this.parent().next().slideToggle();
 			} else {
-				$this.parent('dt').next('.js-data-list-content').toggleClass('active');
+				$this.parent().next().toggleClass('active');
 			}
+
+			return false;
 
 		});
 
-		App.dom.dataListButtonOurServices.on('click', function () {
+		App.dom.dataListLinkOurServices.on('mouseup', function () {
 
 			var $this = $(this);
-			App.dom.dataListButtonDataListContentOurServices.removeClass('active');
+			App.dom.dataListLinkDataListContentOurServices.removeClass('active');
 			$this.toggleClass('active');
 
 			if (window.matchMedia('(min-width: 35em)').matches) {
 				App.dom.dataListContentOurServices.fadeOut();
-				$this.parent('dt').next('.js-data-list-content--our-services').fadeIn();
+				$this.parent().next().fadeIn();
 			} else {
-				$this.parent('dt').next('.js-data-list-content--our-services').addClass('active');
+				$this.parent().next().addClass('active');
 			}
+
+			return false;
 
 		});
 
-		App.dom.dataListContentOurServicesClose.on('click', function () {
+		$('body').on('click', '.js-data-list-content--our-services-close', function () {
 
 			if (window.matchMedia('(min-width: 35em)').matches) {
-				App.dom.dataListButtonOurServices.removeClass('active');
+				App.dom.dataListLinkOurServices.removeClass('active');
 				App.dom.dataListContentOurServices.fadeOut();
 			} else {
-				App.dom.dataListButtonDataListContentOurServices.removeClass('active');
+				App.dom.dataListLinkDataListContentOurServices.removeClass('active');
 			}
+
+			$(this).parent().attr('aria-hidden', 'true');
+
+			return false;
 
 		});
 
@@ -133,6 +140,8 @@
 				$this.html($this.data('button-text'));
 			}
 
+			return false;
+
 		});
 
 		App.dom.headerMainNavButton.on('click', function () {
@@ -148,9 +157,11 @@
 				$this.html($this.data('button-text'));
 			}
 
+			return false;
+
 		});
 
-		App.dom.headerMainNavListItemLink.on('click', function (e) {
+		App.dom.headerMainNavListItemLink.on('click', function () {
 
 			if (App.dom.homePage.length) {
 
@@ -218,6 +229,111 @@
 	App.Util = function () {
 
 		// Util functions
+
+	};
+
+	App.Onload = function () {
+
+		// Onload functions
+
+		// Year
+		var myDate = new Date();
+		App.dom.year.html( myDate.getFullYear() );
+
+		// ARIA Tabs
+		App.dom.dataList.each( function () {
+
+			var thisDataList = $(this);
+
+			// Set role for each list
+			thisDataList.attr('role', 'tablist');
+
+			// Set Aria roles and properties for each 'tab area'
+			thisDataList.find('dd').attr({'role': 'tabpanel', 'aria-hidden': 'true'});
+
+			// Each 'tab' in the list...
+			thisDataList.find('a').each( function () {
+
+				// Create an ID for the 'tab' to match with the tab area
+				var thisTab = $(this),
+					anchorId = 'tab-' + thisTab.attr('href').slice(1);
+
+				// Assign anchorId, Aria role, property, and tabIndex
+				// Set role to parent
+				thisTab.attr({'id': anchorId, 'role': 'tab', 'aria-selected': 'false'}).parent().attr('role', 'presentation');
+
+				// Assign anchorId to its relative tab area
+				thisTab.parent().next().attr('aria-labelledby', anchorId);
+
+				// Click event
+				thisTab.on('click', function (e) {
+
+					// Change state of previously selected thisDataList
+					thisDataList.find('dt.current').removeClass('current').find('a').attr({'aria-selected': 'false'});
+
+					// Hide previously selected tab area
+					thisDataList.find('dd:visible').attr('aria-hidden', 'true');
+
+					// Show newly selected tab area
+					thisTab.parent().next().attr('aria-hidden', 'false');
+
+					// Set state of newly selected tab
+					thisTab.attr({'aria-selected': 'true'}).parent().addClass('current');
+					thisTab.focus();
+
+					return false;
+
+				});
+
+			});
+
+			// Keydown events
+			thisDataList.on('keydown', 'a',	function (e) {
+
+				var thisTab = $(this);
+
+				switch (e.keyCode) {
+					case 37: // Left
+					case 38: // Up
+						if (thisTab.parent().prev().prev().length !== 0) {
+							// Not the last tab, move to the next
+							thisTab.parent().prev().prev().find('a').click();
+						} else {
+							thisDataList.find('dt:last a').click();
+						}
+						break;
+					case 39: // Right
+					case 40: // Down
+						if (thisTab.parent().next().next().length !== 0) {
+							// Not the first tab, move to the next
+							thisTab.parent().next().next().find('a').click();
+						} else {
+							thisDataList.find('dt:first a').click();
+						}
+						break;
+					case 13: // Enter
+						thisTab.mouseup();
+						break;
+				}
+
+			});
+
+			// Set state for the first tabs
+			thisDataList.find("dt:first").addClass('current').find('a').attr({'aria-selected': 'true'});
+
+		});
+
+		if (window.matchMedia('(min-width: 35em)').matches) {
+			// Our Process
+			$('.js-our-process-data-list').addClass('our-process__data-list--left');
+			$('<dl class="our-process__data-list our-process__data-list--right js-our-process-data-list--right js-data-list"/>').insertAfter($('.js-our-process-data-list'));
+			$('.js-our-process-data-list dt:nth-child(4n+1)').addClass('our-process__data-list__title--left');
+			$('.js-our-process-data-list dt:nth-child(4n+3)').addClass('our-process__data-list__title--right');
+			$('.js-our-process-data-list dt:nth-child(4n+3), .js-our-process-data-list dd:nth-child(4n+4)').appendTo($('.js-our-process-data-list--right'));
+
+			// Our Services - close button
+			$('<button class="our-services__data-list__data__close-button js-data-list-content--our-services-close">Close</button>').prependTo('.js-data-list-content--our-services');
+		}
 
 	};
 
