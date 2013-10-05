@@ -2,8 +2,8 @@
 header('Content-type: application/json');
 
 // Define some constants
-define( "RECIPIENT_NAME", "Erik Hagborg" );
-define( "RECIPIENT_EMAIL", "erik@longshipconsulting.com" );
+define( "RECIPIENT_NAME", "John Smith" );
+define( "RECIPIENT_EMAIL", "svinkle@gmail.com" );
 
 // Read the form values
 $success = false;

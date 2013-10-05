@@ -1,4 +1,6 @@
-Longship
+Longship Digital
 =========
 
-Source files for Longship Digital home page.
+Source files for the Longship Digital home page.
+
+http://longshipconsulting.com/
